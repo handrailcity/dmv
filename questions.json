@@ -1,21 +1,208 @@
 [
-  { "question_en": "What is the minimum age to obtain a learner’s permit in Utah?", "question_es": "¿Cuál es la edad mínima para obtener un permiso de aprendizaje en Utah?", "options": [{"en":"15 years old","es":"15 años"},{"en":"16 years old","es:"16 años"},{"en":"14 years old","es":"14 años"},{"en":"17 years old","es":"17 años"}], "correct": "15 years old", "explanation_es": "La edad mínima legal en Utah para tramitar el permiso de aprendizaje por primera vez es de 15 años." },
-  { "question_en": "How long must a driver under 18 hold a permit before applying for a license?", "question_es": "¿Cuánto tiempo debe un conductor menor de 18 años mantener un permiso antes de solicitar la licencia?", "options": [{"en":"3 months","es":"3 meses"},{"en":"6 months","es":"6 meses"},{"en":"12 months","es":"12 meses"},{"en":"18 months","es":"18 meses"}], "correct": "6 months", "explanation_es": "Los menores de 18 años están obligados a mantener un estado de práctica con permiso por un mínimo de 6 meses." },
-  { "question_en": "What is the legal BAC limit for drivers over 21 in Utah?", "question_es": "¿Cuál es el límite legal de BAC para conductores mayores de 21 años en Utah?", "options": [{"en":"0.08%","es":"0.08%"},{"en":"0.05%","es":"0.05%"},{"en":"0.02%","es":"0.02%"},{"en":"0.01%","es":"0.01%"}], "correct": "0.05%", "explanation_es": "¡Alerta de trampa! Utah es el único estado con un límite estricto de 0.05% para adultos. El estándar nacional de 0.08% te hará reprobar aquí." },
-  { "question_en": "When approaching a flashing red light at an intersection, you must:", "question_es": "Al acercarse a una luz roja intermitente en una intersección, debe:", "options": [{"en":"Slow down and proceed","es":"Desacelerar y continuar"},{"en":"Treat it as a four-way stop","es":"Tratarlo como un alto de cuatro vías"},{"en:"Wait for it to turn green","es":"Esperar a que cambie a verde"},{"en":"Yield only to trucks","es":"Ceder el paso solo a camiones"}], "correct": "Treat it as a four-way stop", "explanation_es": "Una luz roja intermitente tiene exactamente el mismo valor legal que una señal de STOP fija. Si hay más vehículos, se maneja como prioridad de cuatro vías." },
-  { "question_en": "In a highway construction zone, if workers are present, speeding fines are:", "question_es": "En una zona de construcción si hay trabajadores presentes, las multas por exceso de velocidad son:", "options": [{"en":"Same as usual","es":"Iguales que siempre"},{"en":"Doubled","es:"Doubled / Duplicadas al doble"},{"en":"Tripled","es":"Triplicadas"},{"en":"Waived","es":"Canceladas"}], "correct": "Doubled", "explanation_es": "La ley de Utah estipula el cobro duplicado (Double Fines) en zonas de mantenimiento activo si se vulneran los límites." },
-  { "question_en": "What color background do work-zone warning signs have?", "question_es: "¿Qué color de fondo tienen las señales de advertencia en zonas de trabajo?", "options": [{"en":"Yellow","es":"Amarillo"},{"en":"Orange","es":"Naranja"},{"en":"Red","es":"Rojo"},{"en":"White","es":"Blanco"}], "correct": "Orange", "explanation_es": "El color naranja (Orange) está reservado exclusivamente a nivel federal y estatal para control temporal de obras viales." },
-  { "question_en": "When parking uphill with a curb, your front wheels should point:", "question_es": "Al estacionar cuesta arriba con un bordillo (curb), sus ruedas delanteras deben apuntar:", "options": [{"en":"Toward the curb","es":"Hacia el bordillo"},{"en:"Away from the curb","es":"Lejos del bordillo / Hacia afuera"},{"en":"Straight ahead","es":"Completamente rectas"},{"en":"None of the above","es":"Ninguna de las anteriores"}], "correct": "Away from the curb", "explanation_es": "Cuesta arriba con borde: se giran las ruedas hacia la calle (Away) para que el auto se bloquee contra el cordón si rueda hacia atrás." },
-  { "question_en": "A road sign depicting a beehive symbol within a black outline shield indicates:", "question_es": "Una señal que muestra una colmena dentro de un escudo negro indica:", "options": [{"en":"An Interstate Highway","es":"Autopista Interestatal"},{"en:"A Utah State Route","es":"Ruta Estatal de Utah"},{"en":"Federal Park Entrance","es":"Entrada a Parque Federal"},{"en":"City restriction","es":"Restricción local"}], "correct": "A Utah State Route", "type": "sign", "sign_id": "beehive", "explanation_es": "La colmena (Beehive) identifica las carreteras estatales exclusivas administradas por el Departamento de Transporte de Utah." },
-  { "question_en": "You see a shield-shaped sign that is blue, red, and white, with a number in the center. What type of route does this sign represent?", "question_es": "Ves una señal en forma de escudo que es azul, roja y blanca, con un número en el centro. ¿Qué tipo de ruta representa?", "options": [{"en":"A Utah State Route","es":"Ruta Estatal de Utah"},{"en":"A U.S. Highway","es":"Carretera de EE.UU."},{"en:"An Interstate Highway","es":"Autopista Interestatal"},{"en":"A County Road","es":"Camino del Condado"}], "correct": "An Interstate Highway", "type": "sign", "sign_id": "interstate", "explanation_es": "Este diseño de escudo con colores rojo, blanco y azul es la señal reglamentaria federal de las Autopistas Interestatales de EE.UU." },
-  { "question_en": "What does this yellow diamond-shaped sign with a thick vertical line and a merging side arrow mean?", "question_es": "¿Qué significa esta señal amarilla en forma de diamante con una línea vertical y una flecha que se une?", "options": [{"en":"Lane reduction ahead","es":"Reducción de carril adelante"},{"en":"Divided highway begins","es":"Comienza autopista dividida"},{"en:"Merging traffic from the side","es":"Tráfico incorporándose desde el lado"},{"en:"Two-way traffic ahead","es":"Tráfico en ambos sentidos"}], "correct": "Merging traffic from the side", "type": "sign", "sign_id": "merge", "explanation_es": "Esta señal advierte al conductor principal que el tráfico del carril lateral se va a incorporar o unir al carril actual en breve." },
-  { "question_en": "Under Utah law, you must dim your headlights when following another vehicle within how many feet?", "question_es": "¿Según la ley de Utah, debe bajar sus luces cuando sigue a otro vehículo a una distancia menor de cuántos pies?", "options": [{"en":"200 feet","es":"200 pies"},{"en":"300 feet","es":"300 pies"},{"en":"500 feet","es":"500 pies"},{"en":"100 feet","es":"100 pies"}], "correct": "300 feet", "explanation_es": "Debes cambiar a luces bajas (low beams) cuando estés a 500 pies de un auto que viene de frente, o a 300 pies cuando sigues a un auto por detrás." },
-  { "question_en": "What does this yellow diamond sign with a black cross (plus sign) mean?", "question_es": "¿Qué significa esta señal amarilla en forma de diamante con una cruz negra (signo de más)?", options: [{"en":"Hospital ahead","es":"Hospital adelante"},{"en":"Intersection/Crossroad ahead","es":"Intersección/Cruce de caminos adelante"},{"en":"Railroad crossing","es":"Cruce de ferrocarril"},{"en":"First aid station","es":"Estación de primeros auxilios"}], "correct": "Intersection/Crossroad ahead", "type": "sign", "sign_id": "crossroad", "explanation_es": "Esta señal advierte que te estás aproximando a un cruce de caminos o intersección. Debes estar alerta al tráfico que entra por la izquierda o derecha." },
-  { "question_en": "If you are convicted of a 'Road Rage' offense in Utah, what is a mandatory penalty?", "question_es": "Si lo condenan por una infracción de 'Acoso Vial' (Road Rage) in Utah, ¿cuál es una sanción obligatoria?", "options": [{"en":"A simple warning letter","es":"Una simple carta de advertencia"},{"en:"Mandatory vehicle impoundment and license suspension","es":"Incautación obligatoria del vehículo y suspensión de la licencia"},{"en":"A community service request","es":"Una solicitud de servicio comunitario"},{"en":"No penalty for first offenders","es":"Ninguna sanción para los infractores primerizos"}], "correct": "Mandatory vehicle impoundment and license suspension", "explanation_es": "Las estrictas leyes de acoso vial (Road Rage) de Utah permiten a las autoridades incautar tu auto de inmediato y suspender tu licencia tras una condecoración firme." },
-  { "question_en": "What does an orange triangular sign with a red border mounted on the back of a vehicle mean?", "question_es": "¿Qué significa una señal triangular naranja con borde rojo montada en la parte trasera de un vehículo?", "options": [{"en":"The vehicle has dynamic steering","es":"El vehículo tiene dirección dinámica"},{"en:"Slow-moving vehicle","es":"Vehículo de movimiento lento"},{"en":"Oversized commercial transport","es":"Transporte comercial de gran tamaño"},{"en":"Hazardous materials carried","es":"Transporta materiales peligrosos"}], "correct": "Slow-moving vehicle", "type": "sign", "sign_id": "slowmoving", "explanation_es": "Esta señal indica un vehículo de movimiento lento (como tractores o maquinaria) que viaja a menos de 25 mph. Prepárate para disminuir tu velocidad." },
-  { "question_en": "You are approaching a stationary autonomous delivery vehicle or robot occupying the right shoulder. Under Utah laws, you should:", "question_es": "Se aproxima a un vehículo o robot de entrega autónomo de forma fija en el acotamiento derecho. Bajo las leyes de Utah, debe:", "options": [{"en":"Maintain speed and stay in your lane","es":"Mantener la velocidad y seguir en su carril"},{"en:"Treat it under the Move-Over law, slowing down or changing lanes if safe","es":"Tratarlo bajo la ley Move-Over, reduciendo velocidad o cambiando de carril si es seguro"},{"en":"Honk repeatedly to clear the automated system","es":"Tocar la bocina de forma repetida"},{"en":"Stop completely until it moves","es":"Detenerse por completo"}], "correct": "Treat it under the Move-Over law, slowing down or changing lanes if safe", "explanation_es": "La ley de protección 'Move-Over' de Utah exige precaución activa, reducción de velocidad o cambio de carril al pasar junto a cualquier vehículo de servicio o dispositivo de asistencia detenido en el acotamiento." },
-  { "question_en": "What does an active white flashing light mounted near the top of a digital school zone speed limit sign mean?", "question_es": "¿Qué significa una luz blanca intermitente activa montada cerca de una señal digital de límite de velocidad en zona escolar?", "options": [{"en:"The speed limit reduction is currently in effect","es":"La reducción del límite de velocidad está actualmente vigente"},{"en":"The zone is completely closed to cars","es":"La zona está completamente cerrada a autos"},{"en:"Photo radar is taking pictures of your plate","es":"El radar fotográfico está tomando fotos de su placa"},{"en":"End of school property zone","es":"Fin de la zona de propiedad escolar"}], "correct": "The speed limit reduction is currently in effect", "explanation_es": "Las luces intermitentes digitales de las zonas escolares indican de forma estricta que la reducción de velocidad está activa en ese momento. Ignorarla conlleva multas seversever-as,
-  {"question_en": "A driver under 21 who is convicted of any alcohol-related driving offense will have their driving privileges suspended for how long under Utah's Not-a-Drop statute?",
+  {
+    "question_en": "What is the minimum age to obtain a learner’s permit in Utah?",
+    "question_es": "¿Cuál es la edad mínima para obtener un permiso de aprendizaje en Utah?",
+    "options": [
+      {"en": "15 years old", "es": "15 años"},
+      {"en": "16 years old", "es": "16 años"},
+      {"en": "14 years old", "es": "14 años"},
+      {"en": "17 years old", "es": "17 años"}
+    ],
+    "correct": "15 years old",
+    "explanation_es": "La edad mínima legal en Utah para tramitar el permiso de aprendizaje por primera vez es de 15 años."
+  },
+  {
+    "question_en": "How long must a driver under 18 hold a permit before applying for a license?",
+    "question_es": "¿Cuánto tiempo debe un conductor menor de 18 años mantener un permiso antes de solicitar la licencia?",
+    "options": [
+      {"en": "3 months", "es": "3 meses"},
+      {"en": "6 months", "es": "6 meses"},
+      {"en": "12 months", "es": "12 meses"},
+      {"en": "18 months", "es": "18 meses"}
+    ],
+    "correct": "6 months",
+    "explanation_es": "Los menores de 18 años están obligados a mantener un estado de práctica con permiso por un mínimo de 6 meses."
+  },
+  {
+    "question_en": "What is the legal BAC limit for drivers over 21 in Utah?",
+    "question_es": "¿Cuál es el límite legal de BAC para conductores mayores de 21 años en Utah?",
+    "options": [
+      {"en": "0.08%", "es": "0.08%"},
+      {"en": "0.05%", "es": "0.05%"},
+      {"en": "0.02%", "es": "0.02%"},
+      {"en": "0.01%", "es": "0.01%"}
+    ],
+    "correct": "0.05%",
+    "explanation_es": "¡Alerta de trampa! Utah es el único estado con un límite estricto de 0.05% para adultos. El estándar nacional de 0.08% te hará reprobar aquí."
+  },
+  {
+    "question_en": "When approaching a flashing red light at an intersection, you must:",
+    "question_es": "Al acercarse a una luz roja intermitente en una intersección, debe:",
+    "options": [
+      {"en": "Slow down and proceed", "es": "Desacelerar y continuar"},
+      {"en": "Treat it as a four-way stop", "es": "Tratarlo como un alto de cuatro vías"},
+      {"en": "Wait for it to turn green", "es": "Esperar a que cambie a verde"},
+      {"en": "Yield only to trucks", "es": "Ceder el paso solo a camiones"}
+    ],
+    "correct": "Treat it as a four-way stop",
+    "explanation_es": "Una luz roja intermitente tiene exactamente el mismo valor legal que una señal de STOP fija. Si hay más vehículos, se maneja como prioridad de cuatro vías."
+  },
+  {
+    "question_en": "In a highway construction zone, if workers are present, speeding fines are:",
+    "question_es": "En una zona de construcción si hay trabajadores presentes, las multas por exceso de velocidad son:",
+    "options": [
+      {"en": "Same as usual", "es": "Iguales que siempre"},
+      {"en": "Doubled", "es": "Duplicadas al doble"},
+      {"en": "Tripled", "es": "Triplicadas"},
+      {"en": "Waived", "es": "Canceladas"}
+    ],
+    "correct": "Doubled",
+    "explanation_es": "La ley de Utah estipula el cobro duplicado (Double Fines) en zonas de mantenimiento activo si se vulneran los límites."
+  },
+  {
+    "question_en": "What color background do work-zone warning signs have?",
+    "question_es": "¿Qué color de fondo tienen las señales de advertencia en zonas de trabajo?",
+    "options": [
+      {"en": "Yellow", "es": "Amarillo"},
+      {"en": "Orange", "es": "Naranja"},
+      {"en": "Red", "es": "Rojo"},
+      {"en": "White", "es": "Blanco"}
+    ],
+    "correct": "Orange",
+    "explanation_es": "El color naranja (Orange) está reservado exclusivamente a nivel federal y estatal para control temporal de obras viales."
+  },
+  {
+    "question_en": "When parking uphill with a curb, your front wheels should point:",
+    "question_es": "Al estacionar cuesta arriba con un bordillo (curb), sus ruedas delanteras deben apuntar:",
+    "options": [
+      {"en": "Toward the curb", "es": "Hacia el bordillo"},
+      {"en": "Away from the curb / Hacia afuera", "es": "Lejos del bordillo / Hacia afuera"},
+      {"en": "Straight ahead", "es": "Completamente rectas"},
+      {"en": "None of the above", "es": "Ninguna de las anteriores"}
+    ],
+    "correct": "Away from the curb / Hacia afuera",
+    "explanation_es": "Cuesta arriba con borde: se giran las ruedas hacia la calle (Away) para que el auto se bloquee contra el cordón si rueda hacia atrás."
+  },
+  {
+    "question_en": "A road sign depicting a beehive symbol within a black outline shield indicates:",
+    "question_es": "Una señal que muestra una colmena dentro de un escudo negro indica:",
+    "options": [
+      {"en": "An Interstate Highway", "es": "Autopista Interestatal"},
+      {"en": "A Utah State Route", "es": "Ruta Estatal de Utah"},
+      {"en": "Federal Park Entrance", "es": "Entrada a Parque Federal"},
+      {"en": "City restriction", "es": "Restricción local"}
+    ],
+    "correct": "A Utah State Route",
+    "type": "sign",
+    "sign_id": "beehive",
+    "explanation_es": "La colmena (Beehive) identifica las carreteras estatales exclusivas administradas por el Departamento de Transporte de Utah."
+  },
+  {
+    "question_en": "You see a shield-shaped sign that is blue, red, and white, with a number in the center. What type of route does this sign represent?",
+    "question_es": "Ves una señal en forma de escudo que es azul, roja y blanca, con un número en el centro. ¿Qué tipo de ruta representa?",
+    "options": [
+      {"en": "A Utah State Route", "es": "Ruta Estatal de Utah"},
+      {"en": "A U.S. Highway", "es": "Carretera de EE.UU."},
+      {"en": "An Interstate Highway", "es": "Autopista Interestatal"},
+      {"en": "A County Road", "es": "Camino del Condado"}
+    ],
+    "correct": "An Interstate Highway",
+    "type": "sign",
+    "sign_id": "interstate",
+    "explanation_es": "Este diseño de escudo con colores rojo, blanco y azul es la señal reglamentaria federal de las Autopistas Interestatales de EE.UU."
+  },
+  {
+    "question_en": "What does this yellow diamond-shaped sign with a thick vertical line and a merging side arrow mean?",
+    "question_es": "¿Qué significa esta señal amarilla en forma de diamante con una línea vertical y una flecha que se une?",
+    "options": [
+      {"en": "Lane reduction ahead", "es": "Reducción de carril adelante"},
+      {"en": "Divided highway begins", "es": "Comienza autopista dividida"},
+      {"en": "Merging traffic from the side", "es": "Tráfico incorporándose desde el lado"},
+      {"en": "Two-way traffic ahead", "es": "Tráfico en ambos sentidos"}
+    ],
+    "correct": "Merging traffic from the side",
+    "type": "sign",
+    "sign_id": "merge",
+    "explanation_es": "Esta señal advierte al conductor principal que el tráfico del carril lateral se va a incorporar o unir al carril actual en breve."
+  },
+  {
+    "question_en": "Under Utah law, you must dim your headlights when following another vehicle within how many feet?",
+    "question_es": "¿Según la ley de Utah, debe bajar sus luces cuando sigue a otro vehículo a una distancia menor de cuántos pies?",
+    "options": [
+      {"en": "200 feet", "es": "200 pies"},
+      {"en": "300 feet", "es": "300 pies"},
+      {"en": "500 feet", "es": "500 pies"},
+      {"en": "100 feet", "es": "100 pies"}
+    ],
+    "correct": "300 feet",
+    "explanation_es": "Debes cambiar a luces bajas (low beams) cuando estés a 500 pies de un auto que viene de frente, o a 300 pies cuando sigues a un auto por detrás."
+  },
+  {
+    "question_en": "What does this yellow diamond sign with a black cross (plus sign) mean?",
+    "question_es": "¿Qué significa esta señal amarilla en forma de diamante con una cruz negra (signo de más)?",
+    "options": [
+      {"en": "Hospital ahead", "es": "Hospital adelante"},
+      {"en": "Intersection/Crossroad ahead", "es": "Intersección/Cruce de caminos adelante"},
+      {"en": "Railroad crossing", "es": "Cruce de ferrocarril"},
+      {"en": "First aid station", "es": "Estación de primeros auxilios"}
+    ],
+    "correct": "Intersection/Crossroad ahead",
+    "type": "sign",
+    "sign_id": "crossroad",
+    "explanation_es": "Esta señal advierte que te estás aproximando a un cruce de caminos o intersección. Debes estar alerta al tráfico que entra por la izquierda o derecha."
+  },
+  {
+    "question_en": "If you are convicted of a 'Road Rage' offense in Utah, what is a mandatory penalty?",
+    "question_es": "Si lo condenan por una infracción de 'Acoso Vial' (Road Rage) en Utah, ¿cuál es una sanción obligatoria?",
+    "options": [
+      {"en": "A simple warning letter", "es": "Una simple carta de advertencia"},
+      {"en": "Mandatory vehicle impoundment and license suspension", "es": "Incautación obligatoria del vehículo y suspensión de la licencia"},
+      {"en": "A community service request", "es": "Una solicitud de servicio comunitario"},
+      {"en": "No penalty for first offenders", "es": "Ninguna sanción para los infractores primerizos"}
+    ],
+    "correct": "Mandatory vehicle impoundment and license suspension",
+    "explanation_es": "Las estrictas leyes de acoso vial (Road Rage) de Utah permiten a las autoridades incautar tu auto de inmediato y suspender tu licencia tras una condena."
+  },
+  {
+    "question_en": "What does an orange triangular sign with a red border mounted on the back of a vehicle mean?",
+    "question_es": "¿Qué significa una señal triangular naranja con borde rojo montada en la parte trasera de un vehículo?",
+    "options": [
+      {"en": "The vehicle has dynamic steering", "es": "El vehículo tiene dirección dinámica"},
+      {"en": "Slow-moving vehicle", "es": "Vehículo de movimiento lento"},
+      {"en": "Oversized commercial transport", "es": "Transporte comercial de gran tamaño"},
+      {"en": "Hazardous materials carried", "es": "Transporta materiales peligrosos"}
+    ],
+    "correct": "Slow-moving vehicle",
+    "type": "sign",
+    "sign_id": "slowmoving",
+    "explanation_es": "Esta señal indica un vehículo de movimiento lento (como tractores o maquinaria) que viaja a menos de 25 mph. Prepárate para disminuir tu velocidad."
+  },
+  {
+    "question_en": "You are approaching a stationary autonomous delivery vehicle or robot occupying the right shoulder. Under Utah laws, you should:",
+    "question_es": "Se aproxima a un vehículo o robot de entrega autónomo de forma estacionaria en el acotamiento derecho. Bajo las leyes de Utah, debe:",
+    "options": [
+      {"en": "Maintain speed and stay in your lane", "es": "Mantener la velocidad y seguir en su carril"},
+      {"en": "Treat it under the Move-Over law, slowing down or changing lanes if safe", "es": "Tratarlo bajo la ley Move-Over, reduciendo velocidad o cambiando de carril si es seguro"},
+      {"en": "Honk repeatedly to clear the automated system", "es": "Tocar la bocina repetidamente para despejar el sistema automatizado"},
+      {"en": "Stop completely until it moves", "es": "Detenerse por completo hasta que se mueva"}
+    ],
+    "correct": "Treat it under the Move-Over law, slowing down or changing lanes if safe",
+    "explanation_es": "La ley de protección 'Move-Over' de Utah exige precaución activa, reducción de velocidad o cambio de carril al pasar junto a cualquier vehículo de servicio o dispositivo de asistencia detenido en el acotamiento."
+  },
+  {
+    "question_en": "What does an active white flashing light mounted near the top of a digital school zone speed limit sign mean?",
+    "question_es": "¿Qué significa una luz blanca intermitente activa montada cerca de una señal digital de límite de velocidad en zona escolar?",
+    "options": [
+      {"en": "The speed limit reduction is currently in effect", "es": "La reducción del límite de velocidad está actualmente vigente"},
+      {"en": "The zone is completely closed to cars", "es": "La zona está completamente cerrada a autos"},
+      {"en": "Photo radar is taking pictures of your plate", "es": "El radar fotográfico está tomando fotos de su placa"},
+      {"en": "End of school property zone", "es": "Fin de la zona de propiedad escolar"}
+    ],
+    "correct": "The speed limit reduction is currently in effect",
+    "explanation_es": "Las luces intermitentes digitales de las zonas escolares indican de forma estricta que la reducción de velocidad está activa en ese momento. Ignorarla conlleva multas severas."
+  },
+  {
+    "question_en": "A driver under 21 who is convicted of any alcohol-related driving offense will have their driving privileges suspended for how long under Utah's Not-a-Drop statute?",
     "question_es": "¿A un conductor menor de 21 años condenado por cualquier infracción de conducción relacionada con el alcohol se le suspenderán sus privilegios por cuánto tiempo bajo el estatuto 'Not-a-Drop' de Utah?",
     "options": [
       {"en": "90 days", "es": "90 días"},
@@ -108,7 +295,7 @@
       {"en": "75 mph", "es": "75 mph"}
     ],
     "correct": "65 mph",
-    "options_es": "En zonas urbanas congestionadas de las interestatales (como el corredor de Salt Lake), el límite base se reduce a 65 mph por seguridad."
+    "explanation_es": "En zonas urbanas congestionadas de las interestatales (como el corredor de Salt Lake), el límite base se reduce a 65 mph por seguridad."
   },
   {
     "question_en": "You may legally pass a vehicle on the right side on a two-lane highway only when:",
@@ -210,7 +397,7 @@
     "question_en": "When trailing large commercial vehicles, you should stay further behind them to ensure that:",
     "question_es": "Al seguir a vehículos comerciales grandes, debe mantenerse más atrás para asegurarse de que:",
     "options": [
-      {"en": "You can read their license plate numbers clearly", "es": "Puede leer claramente sus números de matrícula"},
+      {"en": "You can read their license plate numbers clearly", "es": "Permanecer lo suficientemente lejos para que el chofer lo divise por sus espejos"},
       {"en": "The truck driver can see your vehicle in their side mirrors", "es": "El conductor del camión puede ver su vehículo en sus espejos laterales"},
       {"en": "You block air resistance drafts completely", "es": "Bloquea por completo las corrientes de resistencia del aire"},
       {"en": "You don't let other passenger vehicles merge", "es": "No permite que otros vehículos de pasajeros se incorporen"}
@@ -237,7 +424,7 @@
       {"en": "Drive away immediately if your car works", "es": "Alejarse de inmediato si su automóvil funciona"},
       {"en": "Stop immediately at the scene or closest safe spot, swap insurance details, and report to authorities if damages exceed $2,500", "es": "Detenerse de inmediato, intercambiar datos de seguro y reportar a las autoridades si los daños superan los $2,500"},
       {"en": "Call your vehicle manufacturer hotline details", "es": "Llamar a la línea directa de su fabricante de vehículos"},
-      {"en": "Wait 48 hours before notifying anyone", "es": "Esperar 48 horas antes de notificar a nadie"}
+      {"en": "Wait 48 hours before notifying anyone", "es": "Esperar 48 horas antes de notificar"}
     ],
     "correct": "Stop immediately at the scene or closest safe spot, swap insurance details, and report to authorities if damages exceed $2,500",
     "explanation_es": "Huir de un choque es un delito grave (Hit and Run). Debes detenerte, auxiliar si es necesario e intercambiar seguros."
@@ -260,7 +447,7 @@
     "options": [
       {"en": "A small written warning ticket", "es": "Una pequeña multa de advertencia por escrito"},
       {"en": "Automatic driver's license revocation for 18 months to 3 years", "es": "Revocación automática de la licencia de conducir de 18 meses a 3 años"},
-      {"en": "No action can be taken without a formal court jury", "es": "No se puede tomar ninguna medida sin un jurado judicial formal"},
+      {"en": "No action can be taken without a formal court jury", "es": "No se puede de forma regular tomar acción sin corte"},
       {"en": "Mandatory driving re-test requirements", "es": "Requisitos obligatorios de reevaluación de manejo"}
     ],
     "correct": "Automatic driver's license revocation for 18 months to 3 years",
@@ -269,8 +456,7 @@
   {
     "question_en": "Unless otherwise posted, what is the maximum speed limit in a standard residential area in Utah?",
     "question_es": "A menos que se indique lo contrario, ¿cuál es el límite de velocidad máximo en una zona residencial estándar en Utah?",
-    "options":
-[
+    "options": [
       {"en": "20 mph", "es": "20 mph"},
       {"en": "25 mph", "es": "25 mph"},
       {"en": "30 mph", "es": "30 mph"},
@@ -280,4 +466,3 @@
     "explanation_es": "El límite de velocidad predeterminado en cualquier calle de vecindario residencial o comercial urbano en Utah es de 25 mph."
   }
 ]
-
