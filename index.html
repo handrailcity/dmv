@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utah Driver's Test Prep - Handrail City</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .drawer-transition {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900 flex flex-col min-h-screen antialiased select-none">
+
+    <!-- Premium Corporate Header styled from image.png -->
+    <header class="bg-[#0b131f] text-white shadow-lg sticky top-0 z-10 border-b border-slate-800">
+        <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="https://handrailcity.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group focus:outline-none">
+                <!-- Web-Optimized Responsive Vector Illustration inspired by image.png -->
+                <div class="w-11 h-11 rounded-full bg-[#16222f] p-0.5 border border-slate-700 flex items-center justify-center shrink-0">
+                    <svg viewBox="0 0 100 100" class="w-full h-full">
+                        <!-- Outer circular emblem track -->
+                        <circle cx="50" cy="50" r="44" fill="none" stroke="#ffffff" stroke-width="3"/>
+                        <!-- Stair steps schematic layout -->
+                        <path d="M 52,78 L 64,78 L 64,68 L 76,68 L 76,58 L 84,58" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                        <!-- Character silhouette representation -->
+                        <circle cx="42" cy="33" r="8" fill="#ffffff"/>
+                        <path d="M 32,41 C 32,41 40,38 48,43 L 44,65 L 36,65 Z" fill="#ffffff"/>
+                        <path d="M 38,65 L 36,78 M 43,65 L 45,78" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                        <!-- The Handrail (Brand core focal element) -->
+                        <line x1="22" y1="72" x2="72" y2="38" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-sm font-black tracking-wider uppercase text-white font-mono group-hover:text-amber-400 transition-colors">HANDRAIL</span>
+                    <span class="text-xs font-bold tracking-widest uppercase text-slate-300 -mt-1 font-mono group-hover:text-amber-400 transition-colors">CITY</span>
+                </div>
+            </a>
+            
+            <div class="text-right flex flex-col items-end">
+                <span class="text-[9px] font-bold bg-amber-500 text-slate-900 px-2 py-0.5 rounded uppercase tracking-wider">Simulador</span>
+                <div class="text-xs font-bold text-slate-400 mt-1" id="progress-text">Q: 1/25</div>
+            </div>
+        </div>
+        <!-- Progress Tracking Bar -->
+        <div class="w-full bg-slate-900 h-1">
+            <div id="progress-bar" class="bg-amber-400 h-1 transition-all duration-300" style="width: 4%"></div>
+        </div>
+    </header>
+
+    <!-- Main Content App Canvas -->
+    <main id="app-canvas" class="flex-1 max-w-md w-full mx-auto px-4 py-6 flex flex-col justify-between pb-32">
+        
+        <!-- Question Block -->
+        <div class="space-y-4">
+            <h2 id="question-en" class="text-xl font-bold leading-snug text-slate-900">Loading question...</h2>
+
+            <!-- Spanish Translation Interface Accordion -->
+            <div class="border border-slate-200 rounded-xl bg-white overflow-hidden shadow-xs">
+                <button onclick="toggleTranslation()" class="w-full px-4 py-3 text-left flex items-center justify-between bg-slate-50 hover:bg-slate-100 active:bg-slate-200 transition-colors">
+                    <span class="text-xs font-bold text-slate-600 tracking-wide uppercase flex items-center gap-1">
+                        👁️ Ver traducción en Español
+                    </span>
+                    <span id="toggle-icon" class="text-slate-400 text-xs transition-transform duration-200">▼</span>
+                </button>
+                <div id="translation-content" class="hidden px-4 py-3 border-t border-slate-100 bg-white">
+                    <p id="question-es" class="text-sm text-slate-800 leading-relaxed italic font-medium"></p>
+                </div>
+            </div>
+
+            <!-- Custom Vector Graphics Display Core -->
+            <div id="image-container" class="hidden w-full flex justify-center py-5 bg-white rounded-xl border border-slate-200 shadow-2xs">
+                <div id="sign-graphic" class="w-full flex justify-center items-center"></div>
+            </div>
+        </div>
+
+        <!-- Multiple Choice Options Options Stack -->
+        <div id="options-container" class="space-y-3 mt-6"></div>
+    </main>
+
+    <!-- Fixed Bottom Controls Bar -->
+    <footer id="action-footer" class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-4 py-4 shadow-xl z-20">
+        <div class="max-w-md mx-auto flex gap-3">
+            <button id="deep-dive-btn" onclick="openDeepDive()" class="hidden flex-1 bg-amber-50 border border-amber-200 text-amber-800 text-sm font-bold py-3.5 px-4 rounded-xl shadow-xs hover:bg-[...]
+                ¿Por qué? Explicación 🔍
+            </button>
+            <button id="action-btn" onclick="handleAction()" disabled class="flex-2 bg-slate-200 text-slate-400 font-bold py-3.5 px-6 rounded-xl w-full text-center transition-all cursor-not-allowe[...] 
+                Select an Answer
+            </button>
+        </div>
+    </footer>
+
+    <!-- Native Spanish Rules Drawer Component -->
+    <div id="deep-dive-drawer" class="fixed inset-0 bg-slate-900/60 z-30 hidden opacity-0 transition-opacity duration-300 flex items-end">
+        <div class="absolute inset-0" onclick="closeDeepDive()"></div>
+        <div id="drawer-content" class="relative w-full max-w-md mx-auto bg-white rounded-t-3xl p-6 shadow-2xl space-y-5 drawer-transition transform translate-y-full max-h-[85vh] overflow-y-auto">
+            <div class="w-12 h-1.5 bg-slate-200 rounded-full mx-auto mb-2" onclick="closeDeepDive()"></div>
+            <div class="flex items-center justify-between">
+                <h3 class="text-lg font-extrabold text-slate-900 flex items-center gap-2">💡 Explicación de la Regla</h3>
+                <button onclick="closeDeepDive()" class="text-sm font-bold text-slate-400 bg-slate-100 px-3 py-1 rounded-lg focus:outline-none">Cerrar</button>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-xs font-bold text-amber-800 uppercase tracking-wider">Normativa Oficial de Utah:</h4>
+                <p id="explanation-text" class="text-sm text-slate-700 leading-relaxed bg-amber-50/60 p-4 rounded-xl border border-amber-100"></p>
+            </div>
+            <button onclick="closeDeepDive()" class="w-full bg-[#0b131f] text-white text-sm font-bold py-3.5 rounded-xl focus:outline-none active:bg-slate-800">
+                Entendido, volver a la pregunta
+            </button>
+        </div>
+    </div>
+
+    <!-- Script Processing Engine & Dynamic Dataset -->
+    <script>
+        const masterQuestionPool = [
+            { question_en: "What is the minimum age to obtain a learner’s permit in Utah?", question_es: "¿Cuál es la edad mínima para obtener un permiso de aprendizaje en Utah?", options: [[...]
+            { question_en: "How long must a driver under 18 hold a permit before applying for a license?", question_es: "¿Cuánto tiempo debe un conductor menor de 18 años mantener un permiso a[...] 
+            { question_en: "What is the legal BAC limit for drivers over 21 in Utah?", question_es: "¿Cuál es el límite legal de BAC para conductores mayores de 21 años en Utah?", options: [{[...]
+            { question_en: "When approaching a flashing red light at an intersection, you must:", question_es: "Al acercarse a una luz roja intermitente en una intersección, debe:", options: [{e[...]
+            { question_en: "In a highway construction zone, if workers are present, speeding fines are:", question_es: "En una zona de construcción si hay trabajadores presentes, las multas por [...]
+            { question_en: "What color background do work-zone warning signs have?", question_es: "¿Qué color de fondo tienen las señales de advertencia en zonas de trabajo?", options: [{en:"Y[...]
+            { question_en: "When parking uphill with a curb, your front wheels should point:", question_es: "Al estacionar cuesta arriba con un bordillo (curb), sus ruedas delanteras deben apunta[...]
+            { question_en: "How far ahead should you signal before making a turn in the city?", question_es: "¿Con cuánta anticipación debe señalizar antes de dar un giro en la ciudad?", opti[...]
+            { question_en: "What does flashing amber lights on a school bus mean?", question_es: "¿Qué significan las luces ámbar intermitentes en un autobús escolar?", options: [{en:"Stop im[...]
+            { question_en: "Can you drive in Utah with an out-of-state learner's permit?", question_es: "¿Se puede conducir en Utah usando un permiso de aprendizaje de otro estado?", options: [{[...]
+            { question_en: "A road sign depicting a beehive symbol within a black outline shield indicates:", question_es: "Una señal que muestra una colmena dentro de un escudo negro indica:", [...]
+            { question_en: "You see a shield-shaped sign that is blue, red, and white, with a number in the center. What type of route does this sign represent?", question_es: "Ves una señal en [...]
+            { question_en: "What does this yellow diamond-shaped sign with a thick vertical line and a merging side arrow mean?", question_es: "¿Qué significa esta señal amarilla en forma de d[...]
+            { question_en: "Under Utah law, you must dim your headlights when following another vehicle within how many feet?", question_es: "¿Según la ley de Utah, debe bajar sus luces cuando [...]
+            { question_en: "What does this yellow diamond sign with a black cross (plus sign) mean?", question_es: "¿Qué significa esta señal amarilla en forma de diamante con una cruz negra ([...]
+            { question_en: "If you are convicted of a 'Road Rage' offense in Utah, what is a mandatory penalty?", question_es: "Si lo condenan por una infracción de 'Acoso Vial' (Road Rage) en U[...]
+            { question_en: "When driving in dense fog, heavy rain, or snow, which headlights should you use?", question_es: "Al conducir con niebla densa, lluvia fuerte o nieve, ¿qué luces debe[...]
+            { question_en: "What does an orange triangular sign with a red border mounted on the back of a vehicle mean?", question_es: "¿Qué significa una señal triangular naranja con borde r[...]
+            { question_en: "In Utah, you must notify the Driver License Division (DLD) of an address change within how many days?", question_es: "En Utah, ¿dentro de cuántos días debe notifica[...]
+            { question_en: "What does this yellow diamond sign displaying an arrow pointing straight with a side road joining at an angle mean?", question_es: "¿Qué significa esta señal amaril[...]
+            { question_en: "If a tire blows out while you are driving at high speed, what should you do first?", question_es: "Si un neumático explota mientras conduce a alta velocidad, ¿qué d[...]
+            { question_en: "What does this vertical rectangular white sign displaying a bicycle with the text 'MAY USE FULL LANE' mean?", question_es: "¿Qué significa esta señal rectangular bl[...]
+            { question_en: "When two vehicles meet on a steep, narrow mountain road where they cannot pass, which vehicle has the right-of-way?", question_es: "Cuando dos vehículos se encuentran[...]
+            { question_en: "You are approaching a stationary autonomous delivery vehicle or robot occupying the right shoulder. Under Utah laws, you should:", question_es: "Se aproxima a un vehí[...]
+            { question_en: "What does an active white flashing light mounted near the top of a digital school zone speed limit sign mean?", question_es: "¿Qué significa una luz blanca intermite[...]
+        ];
+
+        const svgSignLibrary = {
+            beehive: `<svg width="100" height="100" viewBox="0 0 100 100"><rect x="5" y="5" width="90" height="90" rx="4" fill="white" stroke="black" stroke-width="4"/><path d="M 25,30 C 25,15 75[...]
+            interstate: `<svg width="100" height="100" viewBox="0 0 100 100"><path d="M 10,20 Q 50,25 90,20 L 90,45 C 90,75 50,95 50,95 C 50,95 10,75 10,45 Z" fill="#0f4c81"/><path d="M 10,20 Q 5[...]
+            merge: `<svg width="100" height="100" viewBox="0 0 100 100" transform="rotate(45)"><rect x="15" y="15" width="70" height="70" fill="#f2a900" stroke="black" stroke-width="3" rx="2"/><g tran[...]
+            crossroad: `<svg width="100" height="100" viewBox="0 0 100 100" transform="rotate(45)"><rect x="15" y="15" width="70" height="70" fill="#f2a900" stroke="black" stroke-width="3" rx="2"/><g [...]
+            slowmoving: `<svg width="100" height="100" viewBox="0 0 100 100"><polygon points="50,15 88,80 12,80" fill="#f25a22" stroke="#d9381e" stroke-width="6" stroke-linejoin="round"/><polygon poin[...]
+            sideroad: `<svg width="100" height="100" viewBox="0 0 100 100" transform="rotate(45)"><rect x="15" y="15" width="70" height="70" fill="#f2a900" stroke="black" stroke-width="3" rx="2"/[
+            fulllane: `<svg width="80" height="110" viewBox="0 0 90 130"><rect x="5" y="5" width="80" height="120" rx="4" fill="white" stroke="black" stroke-width="3"/><circle cx="33" cy="38" r="[...]
+        };
+
+        let currentActiveTest = [];
+        let index = 0;
+        let selectedText = null;
+        let answeredState = false;
+        let correctCount = 0;
+
+        const qEn = document.getElementById("question-en");
+        const qEs = document.getElementById("question-es");
+        const transContent = document.getElementById("translation-content");
+        const toggleIcon = document.getElementById("toggle-icon");
+        const optionsContainer = document.getElementById("options-container");
+        const actionBtn = document.getElementById("action-btn");
+        const deepDiveBtn = document.getElementById("deep-dive-btn");
+        const progressText = document.getElementById("progress-text");
+        const progressBar = document.getElementById("progress-bar");
+        const imageContainer = document.getElementById("image-container");
+        const signGraphic = document.getElementById("sign-graphic");
+        
+        const ddDrawer = document.getElementById("deep-dive-drawer");
+        const drawerContent = document.getElementById("drawer-content");
+        const expText = document.getElementById("explanation-text");
+
+        window.initRandomTest = function() {
+            currentActiveTest = [...masterQuestionPool].sort(() => 0.5 - Math.random()).slice(0, 25);
+            index = 0;
+            correctCount = 0;
+            loadQuestion();
+        };
+
+        function loadQuestion() {
+            const data = currentActiveTest[index];
+            selectedText = null;
+            answeredState = false;
+            
+            actionBtn.innerText = "Select an Answer";
+            actionBtn.disabled = true;
+            actionBtn.className = "flex-2 bg-slate-200 text-slate-400 font-bold py-3.5 px-6 rounded-xl w-full text-center transition-all cursor-not-allowed focus:outline-none";
+            deepDiveBtn.classList.add("hidden");
+            transContent.classList.add("hidden");
+            toggleIcon.style.transform = "rotate(0deg)";
+
+            progressText.innerText = `Q: ${index + 1}/25`;
+            progressBar.style.width = `${((index + 1) / 25) * 100}%`;
+
+            qEn.innerText = data.question_en;
+            qEs.innerText = data.question_es;
+
+            if (data.type === "sign" && svgSignLibrary[data.sign_id]) {
+                imageContainer.classList.remove("hidden");
+                signGraphic.innerHTML = svgSignLibrary[data.sign_id];
+            } else {
+                imageContainer.classList.add("hidden");
+                signGraphic.innerHTML = "";
+            }
+
+            optionsContainer.innerHTML = "";
+            data.options.forEach(opt => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "option-btn w-full text-left bg-white border border-slate-200 rounded-xl p-4 transition-all shadow-xs flex flex-col gap-0.5 focus:outline-none cursor-pointer";
+                btn.onclick = () => selectOption(btn, opt.en);
+                btn.innerHTML = `
+                    <span class="text-base font-bold text-slate-900 opt-en">${opt.en}</span>
+                    <span class="text-xs text-slate-400 font-medium italic">${opt.es}</span>
+                `;
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        window.toggleTranslation = function() {
+            const isHidden = transContent.classList.contains("hidden");
+            transContent.classList.toggle("hidden", !isHidden);
+            toggleIcon.style.transform = isHidden ? "rotate(180deg)" : "rotate(0deg)";
+        };
+
+        function selectOption(btn, text) {
+            if (answeredState) return;
+            selectedText = text;
+
+            document.querySelectorAll(".option-btn").forEach(b => {
+                b.className = "option-btn w-full text-left bg-white border border-slate-200 rounded-xl p-4 transition-all shadow-xs flex flex-col gap-0.5 focus:outline-none cursor-pointer";
+            });
+
+            btn.className = "option-btn w-full text-left bg-slate-50 border-2 border-[#0b131f] rounded-xl p-4 transition-all shadow-xs flex flex-col gap-0.5 focus:outline-none";
+            
+            actionBtn.disabled = false;
+            actionBtn.innerText = "Check Answer";
+            actionBtn.className = "flex-2 bg-[#0b131f] text-white font-bold py-3.5 px-6 rounded-xl w-full text-center shadow-md cursor-pointer focus:outline-none";
+        }
+
+        window.handleAction = function() {
+            if (!answeredState) {
+                evaluateAnswer();
+            } else {
+                index++;
+                if (index < 25 && index < currentActiveTest.length) {
+                    loadQuestion();
+                } else {
+                    renderEndReport();
+                }
+            }
+        };
+
+        function evaluateAnswer() {
+            answeredState = true;
+            const data = currentActiveTest[index];
+            const buttons = document.querySelectorAll(".option-btn");
+
+            if (selectedText === data.correct) correctCount++;
+
+            buttons.forEach(btn => {
+                const checkText = btn.querySelector(".opt-en").innerText;
+                if (checkText === data.correct) {
+                    btn.className = "option-btn w-full text-left bg-emerald-50 border-2 border-emerald-500 text-emerald-950 rounded-xl p-4 flex flex-col gap-0.5";
+                } else if (checkText === selectedText) {
+                    btn.className = "option-btn w-full text-left bg-rose-50 border-2 border-rose-500 text-rose-950 rounded-xl p-4 flex flex-col gap-0.5";
+                } else {
+                    btn.className = "option-btn w-full text-left bg-slate-50 border border-slate-200 opacity-40 rounded-xl p-4 flex flex-col gap-0.5";
+                }
+            });
+
+            actionBtn.innerText = "Next Question →";
+            actionBtn.className = "flex-2 bg-[#0b131f] text-white font-bold py-3.5 px-6 rounded-xl w-full text-center shadow-md cursor-pointer focus:outline-none";
+
+            if (selectedText !== data.correct) {
+                deepDiveBtn.classList.remove("hidden");
+                expText.innerText = data.explanation_es;
+            }
+        }
+
+        function renderEndReport() {
+            const scorePercent = Math.round((correctCount / 25) * 100);
+            const passed = scorePercent >= 80;
+            
+            document.getElementById("app-canvas").innerHTML = `
+                <div class="text-center py-6 space-y-5">
+                    <div class="text-6xl">${passed ? "🎉" : "❌"}</div>
+                    <h2 class="text-2xl font-black text-slate-900">${passed ? "¡Examen Aprobado!" : "Examen No Aprobado"}</h2>
+                    <p class="text-slate-600 text-base">Resultado final: <strong class="text-slate-900 text-2xl block mt-0.5">${scorePercent}% (${correctCount}/25)</strong></p>
+                    <p class="text-xs text-slate-500 px-4">${passed ? "¡Excelente! Has superado el requerimiento del 80% mínimo exigido por la DLD de Utah." : "El examen oficial exige un mínim[...]
+                    
+                    <div class="border border-slate-200 rounded-2xl bg-white p-5 shadow-sm max-w-xs mx-auto mt-2 space-y-4 text-center">
+                        <!-- Premium Footer Logo Presentation -->
+                        <div class="flex items-center justify-center gap-2">
+                            <div class="w-9 h-9 rounded-full bg-[#16222f] p-0.5 border border-slate-700 flex items-center justify-center">
+                                <svg viewBox="0 0 100 100" class="w-full h-full">
+                                    <circle cx="50" cy="50" r="44" fill="none" stroke="#ffffff" stroke-width="3"/>
+                                    <path d="M 52,78 L 64,78 L 64,68 L 76,68 L 76,58 L 84,58" fill="none" stroke="#ffffff" stroke-width="2"/>
+                                    <circle cx="42" cy="33" r="8" fill="#ffffff"/>
+                                    <path d="M 32,41 C 32,41 40,38 48,43 L 44,65 L 36,65 Z" fill="#ffffff"/>
+                                    <line x1="22" y1="72" x2="72" y2="38" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="text-left flex flex-col">
+                                <span class="text-xs font-black tracking-wider text-slate-900 font-mono">HANDRAIL</span>
+                                <span class="text-[10px] font-bold tracking-widest text-slate-500 -mt-1 font-mono">CITY</span>
+                            </div>
+                        </div>
+                        <p class="text-[11px] text-slate-500 leading-relaxed">Fabricamos pasamanos residenciales y comerciales de acero estructural de alta calidad que cumplen al 100% con los có[...] 
+                        <a href="https://handrailcity.com" target="_blank" class="inline-block w-full bg-[#0b131f] text-white text-xs font-bold py-2.5 rounded-xl shadow-xs hover:bg-slate-800 tran[...]
+                    </div>
+
+                    <button onclick="window.initRandomTest()" class="w-full mt-4 bg-[#0b131f] text-white font-bold py-4 rounded-xl shadow-md hover:bg-slate-800 transition-colors cursor-pointer">
+                        Tomar Otro Examen Aleatorio
+                    </button>
+                </div>
+            `;
+            document.getElementById("action-footer").classList.add("hidden");
+        }
+
+        window.openDeepDive = function() {
+            ddDrawer.classList.remove("hidden");
+            setTimeout(() => {
+                ddDrawer.classList.add("opacity-100");
+                drawerContent.classList.remove("translate-y-full");
+            }, 10);
+        };
+
+        window.closeDeepDive = function() {
+            ddDrawer.classList.remove("opacity-100");
+            drawerContent.classList.add("translate-y-full");
+            setTimeout(() => ddDrawer.classList.add("hidden"), 300);
+        };
+
+        initRandomTest();
+    </script>
+</body>
+</html>
