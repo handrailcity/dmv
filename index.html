@@ -13,22 +13,16 @@
 </head>
 <body class="bg-slate-50 font-sans text-slate-900 flex flex-col min-h-screen antialiased select-none">
 
-    <!-- Premium Corporate Header styled from image.png -->
     <header class="bg-[#0b131f] text-white shadow-lg sticky top-0 z-10 border-b border-slate-800">
         <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
             <a href="https://handrailcity.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group focus:outline-none">
-                <!-- Web-Optimized Responsive Vector Illustration inspired by image.png -->
                 <div class="w-11 h-11 rounded-full bg-[#16222f] p-0.5 border border-slate-700 flex items-center justify-center shrink-0">
                     <svg viewBox="0 0 100 100" class="w-full h-full">
-                        <!-- Outer circular emblem track -->
                         <circle cx="50" cy="50" r="44" fill="none" stroke="#ffffff" stroke-width="3"/>
-                        <!-- Stair steps schematic layout -->
                         <path d="M 52,78 L 64,78 L 64,68 L 76,68 L 76,58 L 84,58" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
-                        <!-- Character silhouette representation -->
                         <circle cx="42" cy="33" r="8" fill="#ffffff"/>
                         <path d="M 32,41 C 32,41 40,38 48,43 L 44,65 L 36,65 Z" fill="#ffffff"/>
                         <path d="M 38,65 L 36,78 M 43,65 L 45,78" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
-                        <!-- The Handrail (Brand core focal element) -->
                         <line x1="22" y1="72" x2="72" y2="38" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
                     </svg>
                 </div>
@@ -43,20 +37,16 @@
                 <div class="text-xs font-bold text-slate-400 mt-1" id="progress-text">Q: 1/25</div>
             </div>
         </div>
-        <!-- Progress Tracking Bar -->
         <div class="w-full bg-slate-900 h-1">
             <div id="progress-bar" class="bg-amber-400 h-1 transition-all duration-300" style="width: 4%"></div>
         </div>
     </header>
 
-    <!-- Main Content App Canvas -->
     <main id="app-canvas" class="flex-1 max-w-md w-full mx-auto px-4 py-6 flex flex-col justify-between pb-32">
         
-        <!-- Question Block -->
         <div class="space-y-4">
             <h2 id="question-en" class="text-xl font-bold leading-snug text-slate-900">Loading question...</h2>
 
-            <!-- Spanish Translation Interface Accordion -->
             <div class="border border-slate-200 rounded-xl bg-white overflow-hidden shadow-xs">
                 <button onclick="toggleTranslation()" class="w-full px-4 py-3 text-left flex items-center justify-between bg-slate-50 hover:bg-slate-100 active:bg-slate-200 transition-colors">
                     <span class="text-xs font-bold text-slate-600 tracking-wide uppercase flex items-center gap-1">
@@ -69,36 +59,32 @@
                 </div>
             </div>
 
-            <!-- Custom Vector Graphics Display Core -->
             <div id="image-container" class="hidden w-full flex justify-center py-5 bg-white rounded-xl border border-slate-200 shadow-2xs">
                 <div id="sign-graphic" class="w-full flex justify-center items-center"></div>
             </div>
         </div>
 
-        <!-- Multiple Choice Options Options Stack -->
         <div id="options-container" class="space-y-3 mt-6"></div>
     </main>
 
-    <!-- Fixed Bottom Controls Bar -->
     <footer id="action-footer" class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-4 py-4 shadow-xl z-20">
         <div class="max-w-md mx-auto flex gap-3">
-            <button id="deep-dive-btn" onclick="openDeepDive()" class="hidden flex-1 bg-amber-50 border border-amber-200 text-amber-800 text-sm font-bold py-3.5 px-4 rounded-xl shadow-xs hover:bg-[...]
+            <button id="deep-dive-btn" onclick="openDeepDive()" class="hidden flex-1 bg-amber-50 border border-amber-200 text-amber-800 text-sm font-bold py-3.5 px-4 rounded-xl shadow-xs hover:bg-amber-100 text-center focus:outline-none">
                 ¿Por qué? Explicación 🔍
             </button>
-            <button id="action-btn" onclick="handleAction()" disabled class="flex-2 bg-slate-200 text-slate-400 font-bold py-3.5 px-6 rounded-xl w-full text-center transition-all cursor-not-allowe[...] 
+            <button id="action-btn" onclick="handleAction()" disabled class="flex-2 bg-slate-200 text-slate-400 font-bold py-3.5 px-6 rounded-xl w-full text-center transition-all cursor-not-allowed focus:outline-none">
                 Select an Answer
             </button>
         </div>
     </footer>
 
-    <!-- Native Spanish Rules Drawer Component -->
     <div id="deep-dive-drawer" class="fixed inset-0 bg-slate-900/60 z-30 hidden opacity-0 transition-opacity duration-300 flex items-end">
         <div class="absolute inset-0" onclick="closeDeepDive()"></div>
         <div id="drawer-content" class="relative w-full max-w-md mx-auto bg-white rounded-t-3xl p-6 shadow-2xl space-y-5 drawer-transition transform translate-y-full max-h-[85vh] overflow-y-auto">
             <div class="w-12 h-1.5 bg-slate-200 rounded-full mx-auto mb-2" onclick="closeDeepDive()"></div>
             <div class="flex items-center justify-between">
                 <h3 class="text-lg font-extrabold text-slate-900 flex items-center gap-2">💡 Explicación de la Regla</h3>
-                <button onclick="closeDeepDive()" class="text-sm font-bold text-slate-400 bg-slate-100 px-3 py-1 rounded-lg focus:outline-none">Cerrar</button>
+                <button onclick="closeDeepDive()" class="text-sm font-bold text-slate-400 bg-gray-100 px-3 py-1 rounded-lg focus:outline-none">Cerrar</button>
             </div>
             <div class="space-y-3">
                 <h4 class="text-xs font-bold text-amber-800 uppercase tracking-wider">Normativa Oficial de Utah:</h4>
@@ -110,44 +96,43 @@
         </div>
     </div>
 
-    <!-- Script Processing Engine & Dynamic Dataset -->
     <script>
         const masterQuestionPool = [
-            { question_en: "What is the minimum age to obtain a learner’s permit in Utah?", question_es: "¿Cuál es la edad mínima para obtener un permiso de aprendizaje en Utah?", options: [[...]
-            { question_en: "How long must a driver under 18 hold a permit before applying for a license?", question_es: "¿Cuánto tiempo debe un conductor menor de 18 años mantener un permiso a[...] 
-            { question_en: "What is the legal BAC limit for drivers over 21 in Utah?", question_es: "¿Cuál es el límite legal de BAC para conductores mayores de 21 años en Utah?", options: [{[...]
-            { question_en: "When approaching a flashing red light at an intersection, you must:", question_es: "Al acercarse a una luz roja intermitente en una intersección, debe:", options: [{e[...]
-            { question_en: "In a highway construction zone, if workers are present, speeding fines are:", question_es: "En una zona de construcción si hay trabajadores presentes, las multas por [...]
-            { question_en: "What color background do work-zone warning signs have?", question_es: "¿Qué color de fondo tienen las señales de advertencia en zonas de trabajo?", options: [{en:"Y[...]
-            { question_en: "When parking uphill with a curb, your front wheels should point:", question_es: "Al estacionar cuesta arriba con un bordillo (curb), sus ruedas delanteras deben apunta[...]
-            { question_en: "How far ahead should you signal before making a turn in the city?", question_es: "¿Con cuánta anticipación debe señalizar antes de dar un giro en la ciudad?", opti[...]
-            { question_en: "What does flashing amber lights on a school bus mean?", question_es: "¿Qué significan las luces ámbar intermitentes en un autobús escolar?", options: [{en:"Stop im[...]
-            { question_en: "Can you drive in Utah with an out-of-state learner's permit?", question_es: "¿Se puede conducir en Utah usando un permiso de aprendizaje de otro estado?", options: [{[...]
-            { question_en: "A road sign depicting a beehive symbol within a black outline shield indicates:", question_es: "Una señal que muestra una colmena dentro de un escudo negro indica:", [...]
-            { question_en: "You see a shield-shaped sign that is blue, red, and white, with a number in the center. What type of route does this sign represent?", question_es: "Ves una señal en [...]
-            { question_en: "What does this yellow diamond-shaped sign with a thick vertical line and a merging side arrow mean?", question_es: "¿Qué significa esta señal amarilla en forma de d[...]
-            { question_en: "Under Utah law, you must dim your headlights when following another vehicle within how many feet?", question_es: "¿Según la ley de Utah, debe bajar sus luces cuando [...]
-            { question_en: "What does this yellow diamond sign with a black cross (plus sign) mean?", question_es: "¿Qué significa esta señal amarilla en forma de diamante con una cruz negra ([...]
-            { question_en: "If you are convicted of a 'Road Rage' offense in Utah, what is a mandatory penalty?", question_es: "Si lo condenan por una infracción de 'Acoso Vial' (Road Rage) en U[...]
-            { question_en: "When driving in dense fog, heavy rain, or snow, which headlights should you use?", question_es: "Al conducir con niebla densa, lluvia fuerte o nieve, ¿qué luces debe[...]
-            { question_en: "What does an orange triangular sign with a red border mounted on the back of a vehicle mean?", question_es: "¿Qué significa una señal triangular naranja con borde r[...]
-            { question_en: "In Utah, you must notify the Driver License Division (DLD) of an address change within how many days?", question_es: "En Utah, ¿dentro de cuántos días debe notifica[...]
-            { question_en: "What does this yellow diamond sign displaying an arrow pointing straight with a side road joining at an angle mean?", question_es: "¿Qué significa esta señal amaril[...]
-            { question_en: "If a tire blows out while you are driving at high speed, what should you do first?", question_es: "Si un neumático explota mientras conduce a alta velocidad, ¿qué d[...]
-            { question_en: "What does this vertical rectangular white sign displaying a bicycle with the text 'MAY USE FULL LANE' mean?", question_es: "¿Qué significa esta señal rectangular bl[...]
-            { question_en: "When two vehicles meet on a steep, narrow mountain road where they cannot pass, which vehicle has the right-of-way?", question_es: "Cuando dos vehículos se encuentran[...]
-            { question_en: "You are approaching a stationary autonomous delivery vehicle or robot occupying the right shoulder. Under Utah laws, you should:", question_es: "Se aproxima a un vehí[...]
-            { question_en: "What does an active white flashing light mounted near the top of a digital school zone speed limit sign mean?", question_es: "¿Qué significa una luz blanca intermite[...]
+            { question_en: "What is the minimum age to obtain a learner’s permit in Utah?", question_es: "¿Cuál es la edad mínima para obtener un permiso de aprendizaje en Utah?", options: [{en:"15 years old",es:"15 años"},{en:"16 years old",es:"16 años"},{en:"14 years old",es:"14 años"},{en:"17 years old",es:"17 años"}], correct: "15 years old", explanation_es: "La edad mínima legal en Utah para tramitar el permiso de aprendizaje por primera vez es de 15 años." },
+            { question_en: "How long must a driver under 18 hold a permit before applying for a license?", question_es: "¿Cuánto tiempo debe un conductor menor de 18 años mantener un permiso antes de solicitar la licencia?", options: [{en:"3 months",es:"3 meses"},{en:"6 months",es:"6 meses"},{en:"12 months",es:"12 meses"},{en:"18 months",es:"18 meses"}], correct: "6 months", explanation_es: "Los menores de 18 años están obligados a mantener un estado de práctica con permiso por un mínimo de 6 meses." },
+            { question_en: "What is the legal BAC limit for drivers over 21 in Utah?", question_es: "¿Cuál es el límite legal de BAC para conductores mayores de 21 años en Utah?", options: [{en:"0.08%",es:"0.08%"},{en:"0.05%",es:"0.05%"},{en:"0.02%",es:"0.02%"},{en:"0.01%",es:"0.01%"}], correct: "0.05%", explanation_es: "¡Alerta de trampa! Utah es el único estado con un límite estricto de 0.05% para adultos. El estándar nacional de 0.08% te hará reprobar aquí." },
+            { question_en: "When approaching a flashing red light at an intersection, you must:", question_es: "Al acercarse a una luz roja intermitente en una intersección, debe:", options: [{en:"Slow down and proceed",es:"Desacelerar y continuar"},{en:"Treat it as a four-way stop",es:"Tratarlo como un alto de cuatro vías"},{en:"Wait for it to turn green",es:"Esperar a que cambie a verde"},{en:"Yield only to trucks",es:"Ceder el paso solo a camiones"}], correct: "Treat it as a four-way stop", explanation_es: "Una luz roja intermitente tiene exactamente el mismo valor legal que una señal de STOP fija. Si hay más vehículos, se maneja como prioridad de cuatro vías." },
+            { question_en: "In a highway construction zone, if workers are present, speeding fines are:", question_es: "En una zona de construcción si hay trabajadores presentes, las multas por exceso de velocidad son:", options: [{en:"Same as usual",es:"Iguales que siempre"},{en:"Doubled",es:"Duplicadas al doble"},{en:"Tripled",es:"Triplicadas"},{en:"Waived",es:"Canceladas"}], correct: "Doubled", explanation_es: "La ley de Utah estipula el cobro duplicado (Double Fines) en zonas de mantenimiento activo si se vulneran los límites." },
+            { question_en: "What color background do work-zone warning signs have?", question_es: "¿Qué color de fondo tienen las señales de advertencia en zonas de trabajo?", options: [{en:"Yellow",es:"Amarillo"},{en:"Orange",es:"Naranja"},{en:"Red",es:"Rojo"},{en:"White",es:"Blanco"}], correct: "Orange", explanation_es: "El color naranja (Orange) está reservado exclusivamente a nivel federal y estatal para control temporal de obras viales." },
+            { question_en: "When parking uphill with a curb, your front wheels should point:", question_es: "Al estacionar cuesta arriba con un bordillo (curb), sus ruedas delanteras deben apuntar:", options: [{en:"Toward the curb",es:"Hacia el bordillo"},{en:"Away from the curb",es:"Lejos del bordillo / Hacia afuera"},{en:"Straight ahead",es:"Completamente rectas"},{en:"None of the above",es:"Ninguna de las anteriores"}], correct: "Away from the curb", explanation_es: "Cuesta arriba con borde: se giran las ruedas hacia la calle (Away) para que el auto se bloquee contra el cordón si rueda hacia atrás." },
+            { question_en: "How far ahead should you signal before making a turn in the city?", question_es: "¿Con cuánta anticipación debe señalizar antes de dar un giro en la ciudad?", options: [{en:"50 feet",es:"50 pies"},{en:"100 feet",es:"100 pies"},{en:"200 feet",es:"200 pies"},{en:"300 feet",es:"300 pies"}], correct: "100 feet", explanation_es: "En zonas urbanas residenciales o comerciales, se debe activar la direccional un mínimo de 100 pies antes del giro." },
+            { question_en: "What does flashing amber lights on a school bus mean?", question_es: "¿Qué significan las luces ámbar intermitentes en un autobús escolar?", options: [{en:"Stop immediately",es:"Parar inmediatamente"},{en:"Slow down and prepare to stop",es:"Reducir velocidad y prepararse para parar"},{en:"Pass at normal speed",es:"Pasar a velocidad normal"},{en:"Yield to oncoming cars",es:"Ceder el paso a contraflujo"}], correct: "Slow down and prepare to stop", explanation_es: "Las luces ámbar/amarillas indican aviso previo. El autobús va a detenerse pronto. No significa frenar de golpe, sino prepararse." },
+            { question_en: "Can you drive in Utah with an out-of-state learner's permit?", question_es: "¿Se puede conducir en Utah usando un permiso de aprendizaje de otro estado?", options: [{en:"Yes, for 6 months",es:"Sí, por 6 meses"},{en:"No, it is not allowed",es:"No, no está permitido"},{en:"Yes, if over 18",es:"Sí, si es mayor de 18"},{en:"Only during daylight",es:"Solo de día"}], correct: "No, it is not allowed", explanation_es: "Utah no reconoce legalmente los permisos de aprendizaje emitidos por dependencias vehiculares de otros estados." },
+            { question_en: "A road sign depicting a beehive symbol within a black outline shield indicates:", question_es: "Una señal que muestra una colmena dentro de un escudo negro indica:", options: [{en:"An Interstate Highway",es:"Autopista Interestatal"},{en:"A Utah State Route",es:"Ruta Estatal de Utah"},{en:"Federal Park Entrance",es:"Entrada a Parque Federal"},{en:"City restriction",es:"Restricción local"}], correct: "A Utah State Route", type: "sign", sign_id: "beehive", explanation_es: "La colmena (Beehive) identifica las carreteras estatales exclusivas administradas por el Departamento de Transporte de Utah." },
+            { question_en: "You see a shield-shaped sign that is blue, red, and white, with a number in the center. What type of route does this sign represent?", question_es: "Ves una señal en forma de escudo que es azul, roja y blanca, con un número en el centro. ¿Qué tipo de ruta representa?", options: [{en:"A Utah State Route",es:"Ruta Estatal de Utah"},{en:"A U.S. Highway",es:"Carretera de EE.UU."},{en:"An Interstate Highway",es:"Autopista Interestatal"},{en:"A County Road",es:"Camino del Condado"}], correct: "An Interstate Highway", type: "sign", sign_id: "interstate", explanation_es: "Este diseño de escudo con colores rojo, blanco y azul es la señal reglamentaria federal de las Autopistas Interestatales de EE.UU." },
+            { question_en: "What does this yellow diamond-shaped sign with a thick vertical line and a merging side arrow mean?", question_es: "¿Qué significa esta señal amarilla en forma de diamante con una línea vertical y una flecha que se une?", options: [{en:"Lane reduction ahead",es:"Reducción de carril adelante"},{en:"Divided highway begins",es:"Comienza autopista dividida"},{en:"Merging traffic from the side",es:"Tráfico incorporándose desde el lado"},{en:"Two-way traffic ahead",es:"Tráfico en ambos sentidos"}], correct: "Merging traffic from the side", type: "sign", sign_id: "merge", explanation_es: "Esta señal advierte al conductor principal que el tráfico del carril lateral se va a incorporar o unir al carril actual en breve." },
+            { question_en: "Under Utah law, you must dim your headlights when following another vehicle within how many feet?", question_es: "¿Según la ley de Utah, debe bajar sus luces cuando sigue a otro vehículo a una distancia menor de cuántos pies?", options: [{en:"200 feet",es:"200 pies"},{en:"300 feet",es:"300 pies"},{en:"500 feet",es:"500 pies"},{en:"100 feet",es:"100 pies"}], correct: "300 feet", explanation_es: "Debes cambiar a luces bajas (low beams) cuando estés a 500 pies de un auto que viene de frente, o a 300 pies cuando sigues a un auto por detrás." },
+            { question_en: "What does this yellow diamond sign with a black cross (plus sign) mean?", question_es: "¿Qué significa esta señal amarilla en forma de diamante con una cruz negra (signo de más)?", options: [{en:"Hospital ahead",es:"Hospital adelante"},{en:"Intersection/Crossroad ahead",es:"Intersección/Cruce de caminos adelante"},{en:"Railroad crossing",es:"Cruce de ferrocarril"},{en:"First aid station",es:"Estación de primeros auxilios"}], correct: "Intersection/Crossroad ahead", type: "sign", sign_id: "crossroad", explanation_es: "Esta señal advierte que te estás aproximando a un cruce de caminos o intersección. Debes estar alerta al tráfico que entra por la izquierda o derecha." },
+            { question_en: "If you are convicted of a 'Road Rage' offense in Utah, what is a mandatory penalty?", question_es: "Si lo condenan por una infracción de 'Acoso Vial' (Road Rage) en Utah, ¿cuál es una sanción obligatoria?", options: [{en:"A simple warning letter",es:"Una simple carta de advertencia"},{en:"Mandatory vehicle impoundment and license suspension",es:"Incautación obligatoria del vehículo y suspensión de la licencia"},{en:"A community service request",es:"Una solicitud de servicio comunitario"},{en:"No penalty for first offenders",es:"Ninguna sanción para los infractores primerizos"}], correct: "Mandatory vehicle impoundment and license suspension", explanation_es: "Las estrictas leyes de acoso vial (Road Rage) de Utah permiten a las autoridades incautar tu auto de inmediato y suspender tu licencia tras una condena." },
+            { question_en: "When driving in dense fog, heavy rain, or snow, which headlights should you use?", question_es: "Al conducir con niebla densa, lluvia fuerte o nieve, ¿qué luces debe utilizar?", options: [{en:"High beams",es:"Luces altas"},{en:"Low beams",es:"Luces bajas"},{en:"Parking lights only",es:"Solo luces de estacionamiento"},{en:"No lights are required",es:"No se requieren luces"}], correct: "Low beams", explanation_es: "Las luces altas rebotan contra las gotas de agua o la nieve y te deslumbrarán a ti mismo. Usa siempre luces bajas (low beams)." },
+            { question_en: "What does an orange triangular sign with a red border mounted on the back of a vehicle mean?", question_es: "¿Qué significa una señal triangular naranja con borde rojo montada en la parte trasera de un vehículo?", options: [{en:"The vehicle has dynamic steering",es:"El vehículo tiene dirección dinámica"},{en:"Slow-moving vehicle",es:"Vehículo de movimiento lento"},{en:"Oversized commercial transport",es:"Transporte comercial de gran tamaño"},{en:"Hazardous materials carried",es:"Transporta materiales peligrosos"}], correct: "Slow-moving vehicle", type: "sign", sign_id: "slowmoving", explanation_es: "Esta señal indica un vehículo de movimiento lento (como tractores o maquinaria) que viaja a menos de 25 mph. Prepárate para disminuir tu velocidad." },
+            { question_en: "In Utah, you must notify the Driver License Division (DLD) of an address change within how many days?", question_es: "En Utah, ¿dentro de cuántos días debe notificar a la División de Licencias de Conducir (DLD) un cambio de dirección?", options: [{en:"10 days",es:"10 días"},{en:"30 days",es:"30 días"},{en:"60 days",es:"60 días"},{en:"90 days",es:"90 días"}], correct: "10 days", explanation_es: "Es ley estatal: si te mudas dentro de Utah, tienes un plazo máximo de 10 días para actualizar tu dirección en los registros de la DLD." },
+            { question_en: "What does this yellow diamond sign displaying an arrow pointing straight with a side road joining at an angle mean?", question_es: "¿Qué significa esta señal amarilla con una flecha recta y un camino lateral que se une en ángulo?", options: [{en:"Y-Intersection ahead",es:"Intersección en Y adelante"},{en:"Side road enters at an angle",es:"Camino lateral entra en ángulo"},{en:"No left turns permitted",es:"No se permiten giros a la izquierda"},{en:"Lane ending soon",es:"El carril termina pronto"}], correct: "Side road enters at an angle", type: "sign", sign_id: "sideroad", explanation_es: "Advierte que un camino lateral se conecta con la carretera principal en un ángulo. Observa los autos que intentan ingresar a tu flujo de tráfico." },
+            { question_en: "If a tire blows out while you are driving at high speed, what should you do first?", question_es: "Si un neumático explota mientras conduce a alta velocidad, ¿qué debe hacer primero?", options: [{en:"Slam on the brakes immediately",es:"Pisar los frenos a fondo de inmediato"},{en:"Hold the steering wheel firmly and keep the vehicle straight",es:"Sujetar el volante firmemente y mantener el vehículo recto"},{en:"Swerve quickly onto the shoulder",es:"Desviarse rápidamente hacia el acotamiento"},{en:"Turn off the ignition switch",es:"Apagar el interruptor de encendido"}], correct: "Hold the steering wheel firmly and keep the vehicle straight", explanation_es: "¡Nunca frenes de golpe en una explosión! Sujeta el volante con fuerza para mantener el control, quita el pie del acelerador y frena suavemente cuando disminuyas la velocidad." },
+            { question_en: "What does this vertical rectangular white sign displaying a bicycle with the text 'MAY USE FULL LANE' mean?", question_es: "¿Qué significa esta señal rectangular blanca con una bicicleta y el texto 'MAY USE FULL LANE'?", options: [{en:"Bicycles must ride on the sidewalk",es:"Las bicicletas deben circular por la acera"},{en:"Bicyclists may occupy the entire travel lane",es:"Los ciclistas pueden ocupar todo el carril de circulación"},{en:"Motorists have absolute priority",es:"Los automovilistas tienen prioridad absoluta"},{en:"The lane is closed to all traffic",es:"El carril está cerrado a todo el tráfico"}], correct: "Bicyclists may occupy the entire travel lane", type: "sign", sign_id: "fulllane", explanation_es: "Esta señal reguladora indica que los ciclistas tienen el derecho legal de viajar en el centro del carril de autos por su seguridad, y debes rebasar con precaución." },
+            { question_en: "When two vehicles meet on a steep, narrow mountain road where they cannot pass, which vehicle has the right-of-way?", question_es: "Cuando dos vehículos se encuentran en un camino de montaña empinado y estrecho donde no pueden pasar, ¿qué vehículo tiene el derecho de paso?", options: [{en:"The vehicle traveling downhill",es:"El vehículo que va cuesta abajo"},{en:"The vehicle traveling uphill",es:"El vehículo que va cuesta arriba"},{en:"The heavier vehicle",es:"El vehículo más pesado"},{en:"The vehicle that honks first",es:"El vehículo que toque la bocina primero"}], correct: "The vehicle traveling uphill", explanation_es: "El vehículo que va cuesta arriba (uphill) tiene el derecho de paso. El que va cuesta abajo tiene más control al retroceder, por lo que debe ceder el paso." },
+            { question_en: "You are approaching a stationary autonomous delivery vehicle or robot occupying the right shoulder. Under Utah laws, you should:", question_es: "Se aproxima a un vehículo o robot de entrega autónomo de forma estacionaria en el acotamiento derecho. Bajo las leyes de Utah, debe:", options: [{en:"Maintain speed and stay in your lane",es:"Mantener la velocidad y seguir en su carril"},{en:"Treat it under the Move-Over law, slowing down or changing lanes if safe",es:"Tratarlo bajo la ley Move-Over, reduciendo velocidad o cambiando de carril si es seguro"},{en:"Honk repeatedly to clear the automated system",es:"Tocar la bocina repetidamente para despejar el sistema automatizado"},{en:"Stop completely until it moves",es:"Detenerse por completo hasta que se mueva"}], correct: "Treat it under the Move-Over law, slowing down or changing lanes if safe", explanation_es: "La ley de protección 'Move-Over' de Utah exige precaución activa, reducción de velocidad o cambio de carril al pasar junto a cualquier vehículo de servicio o dispositivo de asistencia detenido en el acotamiento." },
+            { question_en: "What does an active white flashing light mounted near the top of a digital school zone speed limit sign mean?", question_es: "¿Qué significa una luz blanca intermitente activa montada cerca de una señal digital de límite de velocidad en zona escolar?", options: [{en:"The speed limit reduction is currently in effect",es:"La reducción del límite de velocidad está actualmente vigente"},{en:"The zone is completely closed to cars",es:"La zona está completamente cerrada a autos"},{en:"Photo radar is taking pictures of your plate",es:"El radar fotográfico está tomando fotos de su placa"},{en:"End of school property zone",es:"Fin de la zona de propiedad escolar"}], correct: "The speed limit reduction is currently in effect", explanation_es: "Las luces intermitentes digitales de las zonas escolares indican de forma estricta que la reducción de velocidad está activa en ese momento. Ignorarla conlleva multas severas." }
         ];
 
         const svgSignLibrary = {
-            beehive: `<svg width="100" height="100" viewBox="0 0 100 100"><rect x="5" y="5" width="90" height="90" rx="4" fill="white" stroke="black" stroke-width="4"/><path d="M 25,30 C 25,15 75[...]
-            interstate: `<svg width="100" height="100" viewBox="0 0 100 100"><path d="M 10,20 Q 50,25 90,20 L 90,45 C 90,75 50,95 50,95 C 50,95 10,75 10,45 Z" fill="#0f4c81"/><path d="M 10,20 Q 5[...]
-            merge: `<svg width="100" height="100" viewBox="0 0 100 100" transform="rotate(45)"><rect x="15" y="15" width="70" height="70" fill="#f2a900" stroke="black" stroke-width="3" rx="2"/><g tran[...]
-            crossroad: `<svg width="100" height="100" viewBox="0 0 100 100" transform="rotate(45)"><rect x="15" y="15" width="70" height="70" fill="#f2a900" stroke="black" stroke-width="3" rx="2"/><g [...]
-            slowmoving: `<svg width="100" height="100" viewBox="0 0 100 100"><polygon points="50,15 88,80 12,80" fill="#f25a22" stroke="#d9381e" stroke-width="6" stroke-linejoin="round"/><polygon poin[...]
-            sideroad: `<svg width="100" height="100" viewBox="0 0 100 100" transform="rotate(45)"><rect x="15" y="15" width="70" height="70" fill="#f2a900" stroke="black" stroke-width="3" rx="2"/[
-            fulllane: `<svg width="80" height="110" viewBox="0 0 90 130"><rect x="5" y="5" width="80" height="120" rx="4" fill="white" stroke="black" stroke-width="3"/><circle cx="33" cy="38" r="[...]
+            beehive: `<svg width="100" height="100" viewBox="0 0 100 100"><rect x="5" y="5" width="90" height="90" rx="4" fill="white" stroke="black" stroke-width="4"/><path d="M 25,30 C 25,15 75,15 75,30 L 80,75 C 80,82 20,82 20,75 Z" fill="none" stroke="black" stroke-width="4"/><path d="M 32,42 Q 50,38 68,42 M 28,52 Q 50,47 72,52 M 25,62 Q 50,57 75,62" fill="none" stroke="black" stroke-width="3"/><rect x="44" y="68" width="12" height="10" rx="3" fill="black"/></svg>`,
+            interstate: `<svg width="100" height="100" viewBox="0 0 100 100"><path d="M 10,20 Q 50,25 90,20 L 90,45 C 90,75 50,95 50,95 C 50,95 10,75 10,45 Z" fill="#0f4c81"/><path d="M 10,20 Q 50,25 90,20 L 90,38 Q 50,38 10,38 Z" fill="#d9381e"/><path d="M 10,20 Q 50,25 90,20 L 90,45 C 90,75 50,95 50,95 C 50,95 10,75 10,45 Z" fill="none" stroke="white" stroke-width="4"/><line x1="10" y1="38" x2="90" y2="38" stroke="white" stroke-width="3"/><text x="50" y="72" font-family="sans-serif" font-weight="900" font-size="28" fill="white" text-anchor="middle">80</text></svg>`,
+            merge: `<svg width="100" height="100" viewBox="0 0 100 100" transform="rotate(45)"><rect x="15" y="15" width="70" height="70" fill="#f2a900" stroke="black" stroke-width="3" rx="2"/><g transform="rotate(-45 50 50)"><path d="M 45,75 L 45,25 M 45,25 L 38,35 M 45,25 L 52,35" fill="none" stroke="black" stroke-width="5" stroke-linecap="round"/><path d="M 68,60 Q 58,48 48,45" fill="none" stroke="black" stroke-width="5" stroke-linecap="round"/><path d="M 48,45 L 53,53 M 48,45 L 58,43" fill="none" stroke="black" stroke-width="4"/></g></svg>`,
+            crossroad: `<svg width="100" height="100" viewBox="0 0 100 100" transform="rotate(45)"><rect x="15" y="15" width="70" height="70" fill="#f2a900" stroke="black" stroke-width="3" rx="2"/><g transform="rotate(-45 50 50)"><line x1="50" y1="25" x2="50" y2="75" stroke="black" stroke-width="6" stroke-linecap="round"/><line x1="25" y1="50" x2="75" y2="50" stroke="black" stroke-width="6" stroke-linecap="round"/></g></svg>`,
+            slowmoving: `<svg width="100" height="100" viewBox="0 0 100 100"><polygon points="50,15 88,80 12,80" fill="#f25a22" stroke="#d9381e" stroke-width="6" stroke-linejoin="round"/><polygon points="50,28 76,73 24,73" fill="#f2a900"/></svg>`,
+            sideroad: `<svg width="100" height="100" viewBox="0 0 100 100" transform="rotate(45)"><rect x="15" y="15" width="70" height="70" fill="#f2a900" stroke="black" stroke-width="3" rx="2"/><g transform="rotate(-45 50 50)"><line x1="50" y1="20" x2="50" y2="80" stroke="black" stroke-width="6" stroke-linecap="round"/><line x1="50" y1="50" x2="72" y2="35" stroke="black" stroke-width="6" stroke-linecap="round"/></g></svg>`,
+            fulllane: `<svg width="80" height="110" viewBox="0 0 90 130"><rect x="5" y="5" width="80" height="120" rx="4" fill="white" stroke="black" stroke-width="3"/><circle cx="33" cy="38" r="8" fill="none" stroke="black" stroke-width="2"/><circle cx="57" cy="38" r="8" fill="none" stroke="black" stroke-width="2"/><polyline points="33,38 43,26 52,38 45,38 41,20 32,20" fill="none" stroke="black" stroke-width="2"/><text x="45" y="68" font-family="sans-serif" font-weight="800" font-size="7.5" fill="black" text-anchor="middle">MAY USE</text><text x="45" y="82" font-family="sans-serif" font-weight="800" font-size="7.5" fill="black" text-anchor="middle">FULL LANE</text></svg>`
         };
 
         let currentActiveTest = [];
@@ -289,10 +274,9 @@
                     <div class="text-6xl">${passed ? "🎉" : "❌"}</div>
                     <h2 class="text-2xl font-black text-slate-900">${passed ? "¡Examen Aprobado!" : "Examen No Aprobado"}</h2>
                     <p class="text-slate-600 text-base">Resultado final: <strong class="text-slate-900 text-2xl block mt-0.5">${scorePercent}% (${correctCount}/25)</strong></p>
-                    <p class="text-xs text-slate-500 px-4">${passed ? "¡Excelente! Has superado el requerimiento del 80% mínimo exigido por la DLD de Utah." : "El examen oficial exige un mínim[...]
+                    <p class="text-xs text-slate-500 px-4">${passed ? "¡Excelente! Has superado el requerimiento del 80% mínimo exigido por la DLD de Utah." : "El examen oficial exige un mínimo de 80% (20 respuestas correctas) para emitir la licencia."}</p>
                     
                     <div class="border border-slate-200 rounded-2xl bg-white p-5 shadow-sm max-w-xs mx-auto mt-2 space-y-4 text-center">
-                        <!-- Premium Footer Logo Presentation -->
                         <div class="flex items-center justify-center gap-2">
                             <div class="w-9 h-9 rounded-full bg-[#16222f] p-0.5 border border-slate-700 flex items-center justify-center">
                                 <svg viewBox="0 0 100 100" class="w-full h-full">
@@ -308,13 +292,11 @@
                                 <span class="text-[10px] font-bold tracking-widest text-slate-500 -mt-1 font-mono">CITY</span>
                             </div>
                         </div>
-                        <p class="text-[11px] text-slate-500 leading-relaxed">Fabricamos pasamanos residenciales y comerciales de acero estructural de alta calidad que cumplen al 100% con los có[...] 
-                        <a href="https://handrailcity.com" target="_blank" class="inline-block w-full bg-[#0b131f] text-white text-xs font-bold py-2.5 rounded-xl shadow-xs hover:bg-slate-800 tran[...]
+                        <p class="text-[11px] text-slate-500 leading-relaxed">Fabricamos pasamanos residenciales y comerciales de acero estructural de alta calidad que cumplen al 100% con los códigos de seguridad del estado.</p>
+                        <a href="https://handrailcity.com" target="_blank" class="inline-block w-full bg-[#0b131f] text-white text-xs font-bold py-2.5 rounded-xl shadow-xs hover:bg-slate-800 transition-colors">Visitar HandrailCity.com</a>
                     </div>
 
-                    <button onclick="window.initRandomTest()" class="w-full mt-4 bg-[#0b131f] text-white font-bold py-4 rounded-xl shadow-md hover:bg-slate-800 transition-colors cursor-pointer">
-                        Tomar Otro Examen Aleatorio
-                    </button>
+                    <button onclick="window.initRandomTest()" class="w-full mt-4 bg-[#0b131f] text-white font-bold py-4 rounded-xl shadow-md hover:bg-slate-800 transition-colors cursor-pointer">Tomar Otro Examen Aleatorio</button>
                 </div>
             `;
             document.getElementById("action-footer").classList.add("hidden");
